@@ -5,8 +5,30 @@ import kiemTraKhachHang from "./kiemTraKhachHang";
 import KiemTraAdmin from "./KiemTraAdmin";
 
 const routes = [
-  
-  
+  {
+    path: "/admin/danh-sach-tu",
+    component: () => import("../components/WebTuDo/Admin/DanhSachTu/index.vue"),
+    meta: { layout: "adm" },
+    beforeEnter: KiemTraAdmin,
+  },
+  {
+    path: "/admin/danh-sach-khach-hang",
+    component: () =>
+      import("../components/WebTuDo/Admin/DanhSachKhachHang/index.vue"),
+    meta: { layout: "adm" },
+    beforeEnter: KiemTraAdmin,
+  }, 
+  {
+    path: "/admin/dang-ky",
+    component: () => import("../components/WebTuDo/Admin/DangKy/index.vue"),
+    meta: { layout: "adm" },
+  },
+  {
+    path: "/admin/dang-nhap",
+    component: () => import("../components/WebTuDo/Admin/DangNhap/index.vue"),
+    meta: { layout: "adm" },
+  },
+
 
  
  
