@@ -5,21 +5,31 @@ import kiemTraKhachHang from "./kiemTraKhachHang";
 import KiemTraAdmin from "./KiemTraAdmin";
 
 const routes = [
-  
-  
 
- 
- 
-  
-  // {
-  //   path: "/khach-hang/hoa-don",
-  //   component: () =>
-  //     import("../components/WebTuDo/NguoiDung/LichSuThanhToan/index.vue"),
-  //   meta: { layout: "kh" },
-  //   beforeEnter: kiemTraKhachHang,
-  // },
-
-  
+  {
+    path: "/",
+    component: () => import("../components/WebTuDo/NguoiDung/Home/index.vue"),
+    meta: { layout: "kh" },
+    beforeEnter: kiemTraKhachHang,
+  },
+{
+    path: "/khach-hang/nap-tien",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/NapTien/index.vue"),
+    meta: { layout: "kh" },
+    beforeEnter: kiemTraKhachHang,
+  },
+{
+    path: "/khach-hang/dang-ky",
+    component: () => import("../components/WebTuDo/NguoiDung/DangKy/index.vue"),
+    meta: { layout: "kh" },
+  },
+{
+    path: "/khach-hang/dang-nhap",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/DangNhap/index.vue"),
+    meta: { layout: "kh" },
+  },
   
  
 
