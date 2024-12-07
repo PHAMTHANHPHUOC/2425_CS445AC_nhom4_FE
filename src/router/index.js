@@ -17,7 +17,7 @@ const routes = [
       import("../components/WebTuDo/Admin/DanhSachKhachHang/index.vue"),
     meta: { layout: "adm" },
     beforeEnter: KiemTraAdmin,
-  }, 
+  },
   {
     path: "/admin/dang-ky",
     component: () => import("../components/WebTuDo/Admin/DangKy/index.vue"),
@@ -29,23 +29,31 @@ const routes = [
     meta: { layout: "adm" },
   },
 
+  {
+    path: "/",
+    component: () => import("../components/WebTuDo/NguoiDung/Home/index.vue"),
+    meta: { layout: "kh" },
+    beforeEnter: kiemTraKhachHang,
+  },
+  {
+    path: "/khach-hang/nap-tien",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/NapTien/index.vue"),
+    meta: { layout: "kh" },
+    beforeEnter: kiemTraKhachHang,
+  },
+  {
+    path: "/khach-hang/dang-ky",
+    component: () => import("../components/WebTuDo/NguoiDung/DangKy/index.vue"),
+    meta: { layout: "kh" },
+  },
+  {
+    path: "/khach-hang/dang-nhap",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/DangNhap/index.vue"),
+    meta: { layout: "kh" },
+  },
 
- 
- 
-  
-  // {
-  //   path: "/khach-hang/hoa-don",
-  //   component: () =>
-  //     import("../components/WebTuDo/NguoiDung/LichSuThanhToan/index.vue"),
-  //   meta: { layout: "kh" },
-  //   beforeEnter: kiemTraKhachHang,
-  // },
-
-  
-  
- 
-
- 
   {
     path: "/kich-hoat-tai-khoan/:id_can_kich_hoat",
     component: () =>
