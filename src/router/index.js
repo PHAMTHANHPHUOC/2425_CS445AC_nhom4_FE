@@ -55,6 +55,14 @@ const routes = [
   },
 
   {
+    path: "/khach-hang/quen-mat-khau",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/QuenMatKhau/index.vue"),
+    meta: { layout: "kh" },
+    props: true,
+  },
+
+  {
     path: "/kich-hoat-tai-khoan/:id_can_kich_hoat",
     component: () =>
       import("../components/WebTuDo/NguoiDung/KichHoat/index.vue"),
