@@ -69,6 +69,30 @@ const routes = [
     meta: { layout: "kh" },
     props: true,
   },
+
+  // {
+  //   path: "/khach-hang/hoa-don",
+  //   component: () =>
+  //     import("../components/WebTuDo/NguoiDung/LichSuThanhToan/index.vue"),
+  //   meta: { layout: "kh" },
+  //   beforeEnter: kiemTraKhachHang,
+  // },
+
+  {
+    path: "/lay-lai-mat-khau/:hash_reset",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/ResetMatKhau/index.vue"),
+    meta: { layout: "kh" },
+    props: true,
+  },
+
+  {
+    path: "/kich-hoat-tai-khoan/:id_can_kich_hoat",
+    component: () =>
+      import("../components/WebTuDo/NguoiDung/KichHoat/index.vue"),
+    meta: { layout: "kh" },
+    props: true,
+  },
 ];
 
 const router = createRouter({
