@@ -1,70 +1,73 @@
 <template>
-    <div class="authentication-reset-password d-flex align-items-center justify-content-center">
-			<div class="row">
-				<div class="col-12 col-lg-10 mx-auto">
-					<div class="card">
-						<div class="row g-0">
-							<div class="col-lg-12 border-end">
-								<div class="card-body">
-									<div class="p-5">
-										<div class="text-center">
-											<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfEU2rXvs5sNGYzb9RYhxYVXnc8G3xX9fBbw&s" width="180" alt="">
-										</div>
-										<h4 class="mt-5 font-weight-bold">Thay Đổi Mật Khẩu</h4>
-										<p class="text-muted">Nhập lại mật khẩu mới để thay đổi mật khẩu</p>
-										<div class="mb-3 mt-3">
-											<label class="form-label">Mật khẩu mới</label>
-											<input v-model="lay_lai_mat_khau.password" type="text" class="form-control" placeholder="Nhập mật khẩu của bạn">
-										</div>
-										<div class="mb-3">
-											<label class="form-label">Xác nhận mật khẩu</label>
-											<input v-model="lay_lai_mat_khau.re_password" type="text" class="form-control" placeholder="Nhập lại mật khẩu của bạn">
-										</div>
-										<div class="d-grid gap-2">
-											<button v-on:click="LayLaiMatKhau()" type="button" class="btn btn-primary">Thay đổi mật khẩu</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-7">
-								<img src="../../../assets/images/login-images/forgot-password-frent-img.jpg" class="card-img login-img h-100" alt="...">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  <div
+    class="authentication-forgot d-flex align-items-center justify-content-center"
+  >
+    <div class="card forgot-box">
+      <div class="card-body">
+        <div class="p-4 rounded border">
+          <div class="text-center">
+            <img
+              src="../../../assets/images/icons/forgot-2.png"
+              width="120"
+              alt=""
+            />
+          </div>
+          <div class="text-center">
+            <h4 class="mt-3 font-weight-bold">Quên Mật Khẩu?</h4>
+            <p class="text-muted">Nhập Email để lấy lại mật khẩu</p>
+          </div>
+          <div class="my-4">
+            <input
+              v-model="quen_mat_khau.email"
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Nhập vào Email"
+            />
+          </div>
+          <div class="d-grid gap-2">
+            <button
+              v-on:click="actionQuenMatKhau()"
+              type="button"
+              class="btn btn-primary btn-lg"
+            >
+              Gửi
+            </button>
+            <router-link to="/dang-nhap">
+              <a class="btn btn-light"
+                ><i class="bx bx-arrow-back mr-1"></i>Quay lại trang đăng
+                nhập</a
+              >
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-import axios from 'axios';
+import axios from "axios";
 import { createToaster } from "@meforma/vue-toaster";
+import baseRequest from "../../../../core/baseRequest";
 const toaster = createToaster({ position: "top-right" });
-import baseRequestUser from '../../../../core/baseRequestUser';
 export default {
-    props: ['hash_reset'],
-	data() {
-		return {
-			lay_lai_mat_khau: {},
-		}
-	},
-    mounted() {
+  data() {
+    return {
+      quen_mat_khau: {},
+    };
+  },
+  methods: {
+    actionQuenMatKhau() {
+      baseRequest
+        .post("khach-hang/quen-mat-khau", this.quen_mat_khau)
+        .then((res) => {
+          if (res.data.status) {
+            toaster.success(res.data.message);
+          } else {
+            toaster.error(res.data.message);
+          }
+        });
     },
-    methods: {
-        LayLaiMatKhau() {
-            baseRequestUser
-                .post('khach-hang/lay-lai-mat-khau/' + this.$route.params.hash_reset, this.lay_lai_mat_khau)
-                .then((res) => {
-                    if(res.data.status) {
-                        toaster.success(res.data.message);
-						this.$router.push('/khach-hang/dang-nhap');
-                    } else {
-                        toaster.error(res.data.message);
-                    }
-                })
-        }
-    },
-}
+  },
+};
 </script>
-<style>
-    
-</style>
+<style></style>
