@@ -32,7 +32,7 @@
             >
               Gửi
             </button>
-            <router-link to="/dang-nhap">
+            <router-link to="/khach-hang/dang-nhap">
               <a class="btn btn-light"
                 ><i class="bx bx-arrow-back mr-1"></i>Quay lại trang đăng
                 nhập</a
@@ -45,7 +45,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 import { createToaster } from "@meforma/vue-toaster";
 import baseRequest from "../../../../core/baseRequest";
 const toaster = createToaster({ position: "top-right" });
