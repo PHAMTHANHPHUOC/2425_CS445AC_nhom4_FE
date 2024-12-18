@@ -1,9 +1,10 @@
-CÁC BƯỚC CÀI ĐẶT VÀ CHẠY CODE :
-Bước 1: Tải visual Studio Code
-bước 2: Dùng lệnh "git clone https://github.com/PHAMTHANHPHUOC/2425_CS445AC_nhom4_FE.git"
-bước 3: Tải framework vuejs
-bước 4: Nhập lệnh "npm i"
-bước 5: Nhập lệnh "npm run dev" để chạy dự án
+# CÁC BƯỚC CÀI ĐẶT VÀ CHẠY CODE :
+
+- Bước 1: Tải visual Studio Code
+- bước 2: Dùng lệnh "git clone https://github.com/PHAMTHANHPHUOC/2425_CS445AC_nhom4_FE.git"
+- bước 3: Tải framework vuejs
+- bước 4: Nhập lệnh "npm i"
+- bước 5: Nhập lệnh "npm run dev" để chạy dự án
 
 # Vue 3 + Vite
 
