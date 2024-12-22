@@ -6,6 +6,7 @@
 - bước 4: Nhập lệnh "npm i"
 - bước 5: Nhập lệnh "npm run dev" để chạy dự án
 - bước 6: Sau khi đã hoàn thành FE,BE ta vào mục đăng ký tài khoản và nhập dữ liệu(Nhập emai thật đang sử trọng trong máy tính) và checkemail để xác nhận tài khoản
+- (mặc định là vào trang của khách hàng "http://localhost:5173/"), vào "http://localhost:5173/admin/danh-sach-khach-hang" để vào trang của admin
 
 # Vue 3 + Vite
 
