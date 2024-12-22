@@ -5,6 +5,7 @@
 - bước 3: Tải framework vuejs
 - bước 4: Nhập lệnh "npm i"
 - bước 5: Nhập lệnh "npm run dev" để chạy dự án
+- bước 6: Sau khi đã hoàn thành FE,BE ta vào mục đăng ký tài khoản và nhập dữ liệu(Nhập emai thật đang sử trọng trong máy tính) và checkemail để xác nhận tài khoản
 
 # Vue 3 + Vite
 
